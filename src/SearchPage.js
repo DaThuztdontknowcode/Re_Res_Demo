@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import backgroundImage from "./assets/resback.jpg"; // Đảm bảo đường dẫn chính xác
-
+import config from "config"; 
 const SearchPage = () => {
   const [keyword, setKeyword] = useState("");
   const [restaurant, setRestaurant] = useState("");
   const [results, setResults] = useState(null);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); 
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/search", {
+      const response = await axios.get(`${config.API_URL}/search`, {
         params: { keyword, restaurant },
       });
       setResults(response.data);
