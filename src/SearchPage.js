@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import backgroundImage from "./assets/resback.jpg"; // Đảm bảo đường dẫn chính xác
-import config from "config"; 
+import config from "./config"; 
 const SearchPage = () => {
   const [keyword, setKeyword] = useState("");
   const [restaurant, setRestaurant] = useState("");
